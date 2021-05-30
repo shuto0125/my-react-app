@@ -1,0 +1,20 @@
+import * as React from "react";
+import Tweet from "./Tweet";
+
+function Timeline(props: any) {
+  // propsからTweetのリストを作る
+  const tweetList = props.tweets.map((tw: any) => (
+    <Tweet
+      key={tw.id}
+      icon={tw.icon}
+      displayName={tw.displayName}
+      accountName={tw.accountName}
+      content={tw.content}
+    />
+  ));
+
+  // 表示する
+  return <div className="timeline">{tweetList}</div>;
+}
+
+export default Timeline;
